@@ -24,5 +24,6 @@ jobs:
           docker build -t   singhaws/micro-service-one:$TAG .      # (4)
           docker login -u $DOCKER_USER -p $DOCKER_PASS         # (5)
           docker push singhaws/micro-service-one:$TAG
+          az login --service-principal --username $APP_ID --password $PASSWORD --tenant $TENANT_ID
       
   
