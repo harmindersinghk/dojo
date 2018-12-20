@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ms1
-        image: singhaws/micro-service-one
+        image: singhaws/micro-service-one:latest
         ports:
         - containerPort: 8001
 ---
