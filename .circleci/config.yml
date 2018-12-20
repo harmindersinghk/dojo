@@ -27,6 +27,7 @@ jobs:
           az login --service-principal --username $APP_ID --password $PASSWORD --tenant $TENANT_ID
           az aks get-credentials --resource-group acctestRG1 --name acctestaks1 --overwrite-existing
           sed "s/:latest/:$TAG/" <ms1.yaml >ms1tagged.yaml
+          cat ms1tagged.yaml
           kubectl apply -f ms1tagged.yaml
       
   
