@@ -26,7 +26,6 @@ jobs:
           docker push singhaws/micro-service-one:$TAG
           az login --service-principal --username $APP_ID --password $PASSWORD --tenant $TENANT_ID
           az aks get-credentials --resource-group acctestRG1 --name acctestaks1 --overwrite-existing
-          latestb=$TAG
-          kubectl apply -f ms1.yaml:$latestb
+          kubectl apply -f ms1.yaml
       
   
