@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zk-deployment
+  labels:
+    app: zk
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zk
+  template:
+    metadata:
+      labels:
+        app: zk
+    spec:
+      containers:
+      - name: zk
+        image: openzipkin/zipkin
+        ports:
+        - containerPort: 9411
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: zk-service
+  labels:
+    app: zk
+spec:
+    type:   LoadBalancer
+    selector:
+       app: zk
+    ports:
+      - protocol: TCP
+        port: 9401
+        targetPort: 9411
+
+    
+    
+
