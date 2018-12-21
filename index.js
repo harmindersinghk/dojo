@@ -5,7 +5,7 @@ var appzip = require('appmetrics-zipkin')({
     port: 9401,
     serviceName:pkg.name,
     sampleRate: 1.0
-  });
+  }); 
 
 const server = require('./lib/server')
 const PORT = process.env.PORT || 8001
